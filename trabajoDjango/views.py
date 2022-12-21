@@ -1,11 +1,14 @@
 import datetime
 from django.http import HttpResponse
-from django.template import Template,Context
-
+from django.template.loader import get_template
+from django.shortcuts import render
 class Persona(object):
     def __init__(self,nombre,apellidos):
         self.nombre = nombre
         self.apellidos =apellidos
+
+def inicio(request): #primera vista
+    return render(request, 'index.html')
 
 
 def saludo(request): #primera vista
@@ -15,13 +18,14 @@ def hola(request): #primera vista
     p1=Persona("Profesor Rafa","Montero")
     #nombre="Rafa"
     #apellidos="Montero"
-    doc_externo=open("C:/Users/alber/OneDrive/Documentos/GitHub/trabajoDjango/trabajoDjango/plantillas/plantillaBase.html")
+    #doc_externo=open("C:/Users/alber/OneDrive/Documentos/GitHub/trabajoDjango/trabajoDjango/plantillas/plantillaBase.html")
     ahora=datetime.datetime.now()
-    plt=Template(doc_externo.read())
-    doc_externo.close()
-    ctx=Context({"nombre_persona":p1.nombre,"apellido_persona":p1.apellidos,"fecha":ahora})
-    documento=plt.render(ctx)
-    return HttpResponse(documento)
+    #plt=Template(doc_externo.read())
+    #doc_externo.close()
+    #doc_externo=get_template('plantillaBase.html')
+    #ctx=Context({"nombre_persona":p1.nombre,"apellido_persona":p1.apellidos,"fecha":ahora})
+    #documento=doc_externo.render({"nombre_persona":p1.nombre,"apellido_persona":p1.apellidos,"fecha":ahora})
+    return render(request, 'plantillaBase.html',{"nombre_persona":p1.nombre,"apellido_persona":p1.apellidos,"fecha":ahora})
 
 def mostrar_fecha(request): #mostar fecha
     fecha_actual=datetime.datetime.now()
