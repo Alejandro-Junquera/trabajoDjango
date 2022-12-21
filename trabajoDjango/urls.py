@@ -24,5 +24,5 @@ urlpatterns = [
     path('edad/<int:edad>/<int:anio>',calcular_edad),
     path('hola/', hola),
     path('', inicio),
-    path('inicio/', inicio),
+    path('index.html/', inicio),
 ]
