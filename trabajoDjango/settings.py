@@ -59,7 +59,7 @@ ROOT_URLCONF = 'trabajoDjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/alber/OneDrive/Documentos/GitHub/trabajoDjango/trabajoDjango/plantillas'],
+        'DIRS': ['trabajoDjango/plantillas'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
