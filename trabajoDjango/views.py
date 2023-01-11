@@ -40,10 +40,14 @@ def mostrar_fecha(request): #mostar fecha
     """%fecha_actual
     return HttpResponse(documento)
 
-def calcular_edad(request,edad,anio):
+def calcular_edad(request,edad,cumplidos,anio):
     #edad_actual = 18
+    cumplidos = cumplidos == 'True'
     periodo = anio-2022
-    edad_futura=edad+periodo
+    if(cumplidos):
+        edad_futura=edad+periodo-1
+    else:
+        edad_futura=edad+periodo
     documento="""
         <html>
             <head>
