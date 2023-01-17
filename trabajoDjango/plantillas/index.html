@@ -164,9 +164,13 @@
             <h3><span>Elige</span> tu <br />Estilo <span>Personal</span></h3>
             <p class="sub text-uppercase">Soy una lista
               <ul>
-              {% for iteracion in lista %}
-                <li class="sub text-uppercase">{{iteracion}}</li>
-              {% endfor %}
+              {% if lista %}
+                {% for iteracion in lista %}
+                  <li class="sub text-uppercase">{{iteracion}}</li>
+                {% endfor %}
+              {% else %}
+                <p class="sub text-uppercase">No hay elementos en la lista.</p>
+              {% endif %}
               </ul>
             </p>
             <h4>{{nombre_variable}}
