@@ -8,7 +8,10 @@ class Persona(object):
         self.apellidos =apellidos
 
 def inicio(request): #primera vista
-    return render(request, 'index.html')
+    p1=Persona("Vengo de un objeto y soy la propiedad nombre","Vengo del mismo objeto perosona y soy la propiedad apellidos")
+    nombre="Soy la variable nombre"
+    lista=["Soy la posición 1 de la lista","Soy la posición 2 de la lista","Soy la posición 3 de la lista","Soy la posición 4 de la lista"]
+    return render(request, 'index.html',{"objeto_persona":p1,"nombre_variable":nombre, "lista":lista})
 
 
 def saludo(request): #primera vista

@@ -159,9 +159,17 @@
       <div class="container">
         <div class="banner_content row">
           <div class="col-lg-12">
-            <p class="sub text-uppercase">COLECCIÓN HOMBRE</p>
+            <p class="sub text-uppercase">{{objeto_persona.nombre}}</p>
+            <p class="sub text-uppercase">{{objeto_persona.apellidos}}</p>
             <h3><span>Elige</span> tu <br />Estilo <span>Personal</span></h3>
-            <h4>Tus Looks más glamurosos
+            <p class="sub text-uppercase">Soy una lista
+              <ul>
+              {% for iteracion in lista %}
+                <li class="sub text-uppercase">{{iteracion}}</li>
+              {% endfor %}
+              </ul>
+            </p>
+            <h4>{{nombre_variable}}
             </h4>
             <a class="main_btn mt-40" href="#">Ver Colección</a>
           </div>
